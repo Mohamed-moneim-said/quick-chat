@@ -236,7 +236,7 @@ class Quick_Chat {
             }
 
             global $current_user;
-            get_currentuserinfo();
+            wp_get_current_user();
 
             if(isset($_COOKIE['quick_chat_alias_'.$current_user->ID])){
                 $this->user_name =  stripslashes($_COOKIE['quick_chat_alias_'.$current_user->ID]);
@@ -370,7 +370,7 @@ class Quick_Chat {
 
             if($_POST['username_check'] != $this->user_name){
                 global $current_user;
-                get_currentuserinfo();
+                wp_get_current_user();
                 $_POST['username_check'] = trim(stripslashes($_POST['username_check']));
 
                 if  (
